@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-09 19:29+0000\n"
+"POT-Creation-Date: 2025-02-09 19:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
 #: test123/settings.py:58
 msgid "English"
 msgstr ""
 
 #: test123/settings.py:59
 msgid "German"
-msgstr "NEIN NEIN NEIN"
+msgstr ""
 
 #: test123/settings.py:60
 msgid "French"
@@ -41,5 +40,5 @@ msgstr ""
 #: test123/templates/test.html:9 test123/templates/test.html:28
 #: test123/views.py:38
 msgid "Welcome to our multilingual site"
-msgstr "Bienvenidos a nuestro sitio multilingüe"
+msgstr "Willkommen auf unserer mehrsprachigen Seite"
 

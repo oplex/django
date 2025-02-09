@@ -21,6 +21,9 @@ COPY . /app/
 
 # Expose the port the app runs on
 EXPOSE 8888
+RUN python manage.py makemigrations
+RUN python manage.py migrate
+
 
 # Run Django's development server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8888"]

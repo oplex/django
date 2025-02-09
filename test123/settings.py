@@ -52,6 +52,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
+from django.utils.translation import gettext_lazy as _
+
+LANGUAGES = [
+    ('en-us', _('English')),
+    ('de', _('German')),
+    ('fr', _('French')),
+    ('es', _('Spanish')),
+]
 
 
 TEMPLATES = [
