@@ -3,11 +3,8 @@ services:
   web:
     build: .
     volumes:
-      - ./search:/app/search
-      - ./itpriced:/app/itpriced
+      - ./test123:/app/test123
       - ./locale:/app/locale
-
-      - ./csv:/app/csv
       - ./logs:/app/logs
     ports:
       - "8888:8888"
