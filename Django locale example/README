@@ -1,0 +1,82 @@
+# Django Multilingual Example
+
+https://youtu.be/5j1WqsfYxgs
+
+This project demonstrates how to set up a Django application with multilingual support using Django's built-in internationalization (i18n) features.
+
+## Features
+
+- Multiple pages: Page 1, Page 2, Page 3, each with content that can be translated into different languages.
+- Language switcher: Allows users to switch between English, German, Spanish, and Swedish.
+- Translated content: Static text on the pages is displayed based on the selected language.
+
+## Setup
+
+1. **Install dependencies**:
+    - Make sure you have Docker and Docker Compose installed.
+    - Build and run the project using Docker:
+      ```bash
+      docker-compose up --build
+      ```
+
+2. **Run the app**:
+    - The application runs on `http://localhost:8888`.
+    - You can switch languages using the dropdown in the header.
+
+3. **Generate Translation Files**:
+    - To generate the translation files for a specific language, run:
+      ```bash
+      docker-compose exec web python manage.py makemessages -l se
+      docker-compose exec web python manage.py compilemessages
+      ```
+
+4. **Adding New Languages**:
+    - To add a new language, update the `LANGUAGES` setting in `settings.py` and create the necessary translation files.
+
+## Languages Supported
+
+- English
+- German
+- Spanish
+- Swedish
+
+
+```
+docker compose up --build
+[+] Building 0.0s (0/1)                                                                                                                                             docker:default
+[+] Running 0/1
+[+] Building 3.3s (15/15) FINISHED                                                                                                                                  docker:default
+ => [web internal] load build definition from dockerfile                                                                                                                      0.0s
+ => => transferring dockerfile: 1.07kB                                                                                                                                        0.0s
+ => [web internal] load metadata for docker.io/library/python:3.9-slim                                                                                                        1.0s
+ => [web internal] load .dockerignore                                                                                                                                         0.0s
+ => => transferring context: 2B                                                                                                                                               0.0s
+ => [web 1/9] FROM docker.io/library/python:3.9-slim@sha256:f9364cd6e0c146966f8f23fc4fd85d53f2e604bdde74e3c06565194dc4a02f85                                                  0.0s
+ => => resolve docker.io/library/python:3.9-slim@sha256:f9364cd6e0c146966f8f23fc4fd85d53f2e604bdde74e3c06565194dc4a02f85                                                      0.0s
+ => [web internal] load build context                                                                                                                                         0.0s
+ => => transferring context: 25.12kB                                                                                                                                          0.0s
+ => CACHED [web 2/9] RUN apt-get update && apt-get install -y gettext                                                                                                         0.0s
+ => CACHED [web 3/9] WORKDIR /app                                                                                                                                             0.0s
+ => CACHED [web 4/9] COPY requirements.txt /app/                                                                                                                              0.0s
+ => CACHED [web 5/9] RUN pip install --no-cache-dir -r requirements.txt                                                                                                       0.0s
+ => [web 6/9] COPY . /app/                                                                                                                                                    0.0s
+ => [web 7/9] RUN python manage.py makemigrations                                                                                                                             0.6s
+ => [web 8/9] RUN python manage.py migrate                                                                                                                                    0.9s
+ => [web 9/9] RUN python manage.py compilemessages                                                                                                                            0.6s
+ => [web] exporting to image                                                                                                                                                  0.0s
+ => => exporting layers                                                                                                                                                       0.0s
+ => => writing image sha256:fcfc6431cdcd5efdcdddd53cf9f4511aaddae9e4c3d52f4f37ecc318410ee65f                                                                                  0.0s
+[+] Running 3/3o docker.io/library/djangolocaleexample-web                                                                                                                    0.0s
+ ✔ Service web                          Built                                                                                                                                 3.4s
+ ✔ Network djangolocaleexample_default  Created                                                                                                                               0.1s
+ ✔ Container djangolocaleexample-web-1  Created                                                                                                                               0.0s
+Attaching to web-1
+web-1  | Watching for file changes with StatReloader
+web-1  | Performing system checks...
+web-1  |
+web-1  | System check identified no issues (0 silenced).
+web-1  | February 09, 2025 - 21:24:43
+web-1  | Django version 4.2.19, using settings 'test123.settings'
+web-1  | Starting development server at http://0.0.0.0:8888/
+web-1  | Quit the server with CONTROL-C.
+```
