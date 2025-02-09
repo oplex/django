@@ -26,6 +26,16 @@ EXPOSE 8888
 RUN python manage.py makemigrations
 RUN python manage.py migrate
 
+# Management commands use --help for more info 
+## RUN python manage.py makemessages --help   
+## RUN python manage.py compilemessages --help  
+
+#RUN python manage.py makemessages -l se 
+# RUN python manage.py makemessages
+RUN python manage.py compilemessages 
+
 
 # Run Django's development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8888"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8888"] 
+
+ 
