@@ -1,0 +1,16 @@
+
+services:
+  web:
+    build: .
+    volumes:
+      - ./search:/app/search
+      - ./itpriced:/app/itpriced
+      - ./locale:/app/locale
+
+      - ./csv:/app/csv
+      - ./logs:/app/logs
+    ports:
+      - "8888:8888"
+    environment:
+      - LANG=es_ES.UTF-8
+      - LC_ALL=es_ES.UTF-8

@@ -1,0 +1,29 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "My App" %}</title>
+</head>
+<body>
+    <h1>{% trans "Welcome to our multilingual site" %}</h1>
+    
+    <!-- Language Switcher -->
+    <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <select name="language" onchange="this.form.submit()">
+            <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+            <option value="es" {% if LANGUAGE_CODE == 'es' %}selected{% endif %}>EspaÃÂ±ol</option>
+            <option value="de" {% if LANGUAGE_CODE == 'de' %}selected{% endif %}>Deutsch</option>
+            <!-- Add other languages here -->
+        </select>
+    </form>
+
+    <!-- Other content -->
+</body>
+</html> 
+
+
+
+<h1>{% trans "Welcome to our multilingual site" %}</h1>
+<h1>Current Language: {{ LANGUAGE_CODE }}</h1>
