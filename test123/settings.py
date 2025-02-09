@@ -57,8 +57,8 @@ from django.utils.translation import gettext_lazy as _
 LANGUAGES = [
     ('en-us', _('English')),
     ('de', _('German')),
-    ('fr', _('French')),
     ('es', _('Spanish')),
+    ('se', _('Swedish')),
 ]
 
 

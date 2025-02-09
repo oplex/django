@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-09 19:56+0000\n"
+"POT-Creation-Date: 2025-02-09 20:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,11 +33,47 @@ msgstr ""
 msgid "Spanish"
 msgstr ""
 
-#: test123/templates/test.html:6
+#: test123/templates/base.html:7 test123/templates/test.html:7
 msgid "My App"
 msgstr ""
 
-#: test123/templates/test.html:9 test123/templates/test.html:29
-#: test123/views.py:38
+#: test123/templates/base.html:25
+msgid "Page 1"
+msgstr ""
+
+#: test123/templates/base.html:26
+msgid "Page 2"
+msgstr ""
+
+#: test123/templates/base.html:27
+msgid "Page 3"
+msgstr ""
+
+#: test123/templates/page1.html:4
+msgid "Welcome to Page 1"
+msgstr ""
+
+#: test123/templates/page1.html:5
+msgid "This is the first page of the app."
+msgstr ""
+
+#: test123/templates/page2.html:5
+msgid "Welcome to Page 2"
+msgstr ""
+
+#: test123/templates/page2.html:6
+msgid "This is the second page of the app."
+msgstr ""
+
+#: test123/templates/page3.html:5
+msgid "Welcome to Page 3"
+msgstr ""
+
+#: test123/templates/page3.html:6
+msgid "This is the third page of the app."
+msgstr ""
+
+#: test123/templates/test.html:10 test123/templates/test.html:29
+#: test123/views.py:13
 msgid "Welcome to our multilingual site"
 msgstr ""

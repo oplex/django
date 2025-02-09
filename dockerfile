@@ -21,6 +21,8 @@ COPY . /app/
 
 # Expose the port the app runs on
 EXPOSE 8888
+
+
 RUN python manage.py makemigrations
 RUN python manage.py migrate
 

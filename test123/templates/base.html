@@ -5,10 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{% trans "My App" %}</title>
-</head>
-<body>
-    <h1>{% trans "Welcome to our multilingual site" %}</h1>
-    
+
 <!-- Language Switcher -->
 <form action="{% url 'set_language' %}" method="post">
     {% csrf_token %}
@@ -16,14 +13,30 @@
         <option value="en-us" {% if LANGUAGE_CODE == 'en-us' %}selected{% endif %}>English</option>
         <option value="es" {% if LANGUAGE_CODE == 'es' %}selected{% endif %}>Spanish</option>
         <option value="de" {% if LANGUAGE_CODE == 'de' %}selected{% endif %}>German</option>
+        <option value="se" {% if LANGUAGE_CODE == 'se' %}selected{% endif %}>Swedish</option>
     </select>
 </form>
 
-    <!-- Other content -->
+<h1> html lang="{{ LANGUAGE_CODE }}"</h1>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'page1' %}">{% trans "Page 1" %}</a></li>
+                <li><a href="{% url 'page2' %}">{% trans "Page 2" %}</a></li>
+                <li><a href="{% url 'page3' %}">{% trans "Page 3" %}</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% load i18n %}
+
+        {% endblock %}
+
+        
+    </main>
 </body>
-</html> 
-
-
-
-<h1>{% trans "Welcome to our multilingual site" %}</h1>
-<h1>Current Language: {{ LANGUAGE_CODE }}</h1>
+</html>
